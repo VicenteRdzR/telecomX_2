@@ -1,62 +1,51 @@
 # 📊 TelecomX - Predicción de Cancelación de Clientes
 
-Este proyecto implementa un pipeline completo de análisis y modelado predictivo para **detectar la cancelación de clientes (Churn)** en una empresa de telecomunicaciones ficticia.
+Proyecto de analítica y modelado para predecir **Churn** (cancelación) en una telco ficticia.
 
----
-
-## 🚀 Pipeline del Proyecto
+## 🚀 Pipeline
 
 1. **ETL y Limpieza**
-   - `limpieza.py`: elimina columnas innecesarias.
-   - `encoding.py`: aplana columnas anidadas y aplica codificación one-hot.
-   - `verificacion.py`: valida la existencia y consistencia de la variable objetivo `Churn`.
+   - `src/limpieza.py`: elimina columnas innecesarias.
+   - `src/encoding.py`: aplana columnas anidadas y aplica One-Hot Encoding.
+   - `src/verificacion.py`: valida la presencia y consistencia de `Churn`.
 
 2. **Análisis Exploratorio**
-   - `analisis.py`: genera correlaciones y gráficas exploratorias.
-   - Resultados visuales guardados en la carpeta `/plots`.
+   - `src/analisis.py`: genera matriz de correlación y gráficas (en `/plots`).
 
 3. **Modelado Predictivo**
-   - `modelado.py`: entrena modelos de clasificación (Regresión Logística, Random Forest).
-   - Evaluación con métricas: Accuracy, Precision, Recall, F1-score y Matriz de Confusión.
-
----
+   - `src/modelado.py`: separación train/test y modelos (Regresión Logística con normalización y Random Forest sin normalización).
+   - Métricas: Accuracy, Precision, Recall, F1, Matriz de Confusión.
 
 ## 📁 Estructura del Proyecto
 
-TelecomX-Predictivo/
-│── data/ # Datos originales, limpios y codificados
-│── plots/ # Gráficas generadas en el análisis y modelado
-│── src/ # Scripts de Python
-│ ├── etl.py
-│ ├── limpieza.py
-│ ├── encoding.py
-│ ├── verificacion.py
-│ ├── analisis.py
-│ └── modelado.py
-│── Conclusiones_TelecomX.docx # Documento de conclusiones
-│── README.md
-
-
+├─ data/ # (Ignorada en git) datasets locales
+│ └─ .gitkeep
+├─ plots/ # Gráficas generadas
+├─ src/ # Código fuente
+│ ├─ etl.py
+│ ├─ limpieza.py
+│ ├─ encoding.py
+│ ├─ verificacion.py
+│ ├─ analisis.py
+│ └─ modelado.py
+├─ Conclusiones_TelecomX.docx
+└─ README.md
 ---
 
-## 📌 Limitaciones Encontradas
 
-Durante el modelado se identificó que el dataset contiene únicamente clientes activos (`Churn = 0`), sin ejemplos de cancelación (`Churn = 1`).  
-Esto imposibilitó el entrenamiento de modelos predictivos, pero permitió demostrar un **pipeline completo de analítica de datos**.
+## ⚠️ Nota sobre el dataset
 
----
+El archivo `data/datos_codificados.json` supera el límite de GitHub (100 MB), **no se incluye en el repositorio**.  
+Coloca los datos en `data/` de forma local antes de ejecutar los scripts.  
+Si quieres compartirlo, súbelo a un servicio externo (Drive/Dropbox/Kaggle) y enlázalo aquí.
 
-## ✅ Conclusiones
+## ✅ Estado del Proyecto
 
-- El pipeline implementado (ETL → análisis → modelado) funciona correctamente.  
-- La ausencia de clientes cancelados en los datos originales impidió el modelado.  
-- En un caso real, sería necesario **corregir el dataset**, balancear clases y reentrenar modelos.  
-
----
+- El pipeline funciona de punta a punta.
+- **Limitación detectada**: la variable `Churn` en el dataset actual solo contiene la clase `0` (activos), sin `1` (cancelados).
+- Por ello, los modelos no se entrenan (requieren ambas clases). El código maneja esta situación e informa en consola.
 
 ## 🔧 Requerimientos
-
-Instalar dependencias principales:
 
 pip install pandas numpy scikit-learn matplotlib seaborn
 
