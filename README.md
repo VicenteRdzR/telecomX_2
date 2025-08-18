@@ -35,14 +35,6 @@ Proyecto de analítica y modelado para predecir **Churn** (cancelación) en una 
 ## ⚠️ Nota sobre el dataset
 
 El archivo `data/datos_codificados.json` supera el límite de GitHub (100 MB), **no se incluye en el repositorio**.  
-Coloca los datos en `data/` de forma local antes de ejecutar los scripts.  
-Si quieres compartirlo, súbelo a un servicio externo (Drive/Dropbox/Kaggle) y enlázalo aquí.
-
-## ✅ Estado del Proyecto
-
-- El pipeline funciona de punta a punta.
-- **Limitación detectada**: la variable `Churn` en el dataset actual solo contiene la clase `0` (activos), sin `1` (cancelados).
-- Por ello, los modelos no se entrenan (requieren ambas clases). El código maneja esta situación e informa en consola.
 
 ## 🔧 Requerimientos
 ```bash
