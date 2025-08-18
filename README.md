@@ -29,7 +29,7 @@ Proyecto de analítica y modelado para predecir **Churn** (cancelación) en una 
 │  ├─ analisis.py
 │  └─ modelado.py
 ├─ Conclusiones_TelecomX.docx
-
+└─ README.md
 ```
 
 ## ⚠️ Nota sobre el dataset
@@ -45,16 +45,18 @@ Si quieres compartirlo, súbelo a un servicio externo (Drive/Dropbox/Kaggle) y e
 - Por ello, los modelos no se entrenan (requieren ambas clases). El código maneja esta situación e informa en consola.
 
 ## 🔧 Requerimientos
-
+```bash
 pip install pandas numpy scikit-learn matplotlib seaborn
+```
 
 ## Ejecucion
-
+```bash
 python src/limpieza.py
 python src/encoding.py
 python src/verificacion.py
 python src/analisis.py
 python src/modelado.py
+```
 
 ## Autor
 José Vicente Rodríguez Rivera
