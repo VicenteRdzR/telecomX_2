@@ -17,21 +17,20 @@ Proyecto de analítica y modelado para predecir **Churn** (cancelación) en una 
    - Métricas: Accuracy, Precision, Recall, F1, Matriz de Confusión.
 
 ## 📁 Estructura del Proyecto
-
-├─ data/ # (Ignorada en git) datasets locales
-│ └─ .gitkeep
-├─ plots/ # Gráficas generadas
-├─ src/ # Código fuente
-│ ├─ etl.py
-│ ├─ limpieza.py
-│ ├─ encoding.py
-│ ├─ verificacion.py
-│ ├─ analisis.py
-│ └─ modelado.py
+```text
+├─ data/                # (Ignorada en git) datasets locales
+│  └─ .gitkeep
+├─ plots/               # Gráficas generadas
+├─ src/                 # Código fuente
+│  ├─ etl.py
+│  ├─ limpieza.py
+│  ├─ encoding.py
+│  ├─ verificacion.py
+│  ├─ analisis.py
+│  └─ modelado.py
 ├─ Conclusiones_TelecomX.docx
-└─ README.md
----
 
+```
 
 ## ⚠️ Nota sobre el dataset
 
